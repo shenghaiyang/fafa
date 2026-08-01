@@ -1,0 +1,54 @@
+[package]
+name = "fafa"
+version = "0.1.0"
+edition = "2024"
+description = "A developer toolbox desktop client"
+rust-version = "1.97.1"
+authors = ["shenghaiyang"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/shenghaiyang/fafa"
+homepage = "https://github.com/shenghaiyang/fafa"
+readme = "README.md"
+
+[dependencies]
+anyhow = "1.0.104"
+argon2 = "0.5"
+base64 = "0.23.0"
+blake3 = "1.8.5"
+dirs = "6.0.0"
+gpui = { git = "https://github.com/zed-industries/zed.git" }
+gpui_platform = { git = "https://github.com/zed-industries/zed.git", features = ["font-kit", "wayland"] }
+gpui_util = { git = "https://github.com/zed-industries/zed.git" }
+heck = "0.5"
+hex = "0.4.3"
+jiff = "0.2.35"
+md-5 = "0.11.0"
+percent-encoding = "2.3.1"
+qrcode = { version = "0.14.1", features = ["svg"] }
+rand_core = { version = "0.6", features = ["getrandom"] }
+rust-embed = { version = "8.12.0", features = ["include-exclude"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+sha1 = "0.11.0"
+sha2 = "0.11.0"
+sha3 = "0.12.0"
+sys-locale = "0.3.2"
+tracing = { version = "0.1.44", features = ["max_level_trace", "release_max_level_error"] }
+tracing-appender = "0.2.5"
+tracing-subscriber = "0.3.23"
+uuid = { version = "1.24.0", features = ["v4", "v7"] }
+
+[package.metadata.bundle]
+name = "FaFa"
+identifier = "com.shenghaiyang.fafa"
+icon = ["resources/app-icon-512.png", "resources/app-icon-512@2x.png"]
+
+[lints.clippy]
+inconsistent_struct_constructor = "warn"
+unwrap_used = "deny"
+todo = "deny"
+type_complexity = "allow"
+let_underscore_future = "allow"
+single_range_in_vec_init = "allow"
+too_many_arguments = "allow"
+large_enum_variant = "allow"

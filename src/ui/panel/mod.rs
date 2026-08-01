@@ -1,0 +1,10 @@
+pub mod base64_panel;
+pub mod color_panel;
+pub mod hash_panel;
+pub mod number_base_panel;
+pub mod password_hash_panel;
+pub mod qrcode_panel;
+pub mod text_case_panel;
+pub mod timestamp_panel;
+pub mod url_panel;
+pub mod uuid_panel;

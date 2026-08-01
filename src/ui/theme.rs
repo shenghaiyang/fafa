@@ -1,0 +1,51 @@
+use gpui::{Hsla, hsla};
+
+pub struct Theme {
+    pub bg: Hsla,
+    pub text: Hsla,
+    pub text_dim: Hsla,
+    pub panel_bg: Hsla,
+    pub border: Hsla,
+    pub sidebar_bg: Hsla,
+    pub sidebar_active: Hsla,
+    pub sidebar_hover: Hsla,
+    pub sidebar_text: Hsla,
+    pub sidebar_active_text: Hsla,
+    pub input_bg: Hsla,
+    pub input_border: Hsla,
+    pub button_bg: Hsla,
+    pub button_hover: Hsla,
+    pub button_text: Hsla,
+    pub result_bg: Hsla,
+    pub result_text: Hsla,
+    pub label_result_text: Hsla,
+    pub accent: Hsla,
+    pub app_icon_bg_from: Hsla,
+    pub app_icon_bg_to: Hsla,
+}
+
+pub const MONO_FONT: &str = "JetBrains Mono";
+
+pub const MAIN_THEME: Theme = Theme {
+    bg: hsla(0.611, 0.18, 0.96, 1.0),
+    text: hsla(0.622, 0.30, 0.16, 1.0),
+    text_dim: hsla(0.617, 0.12, 0.45, 1.0),
+    panel_bg: hsla(0.0, 0.0, 1.0, 1.0),
+    border: hsla(0.611, 0.14, 0.88, 1.0),
+    sidebar_bg: hsla(0.617, 0.16, 0.94, 1.0),
+    sidebar_active: hsla(0.65, 0.60, 0.95, 1.0),
+    sidebar_hover: hsla(0.617, 0.20, 0.90, 1.0),
+    sidebar_text: hsla(0.617, 0.12, 0.38, 1.0),
+    sidebar_active_text: hsla(0.65, 0.62, 0.48, 1.0),
+    input_bg: hsla(0.0, 0.0, 1.0, 1.0),
+    input_border: hsla(0.611, 0.14, 0.82, 1.0),
+    button_bg: hsla(0.65, 0.62, 0.54, 1.0),
+    button_hover: hsla(0.65, 0.62, 0.46, 1.0),
+    button_text: hsla(0.0, 0.0, 1.0, 1.0),
+    result_bg: hsla(0.617, 0.15, 0.96, 1.0),
+    result_text: hsla(0.622, 0.26, 0.15, 1.0),
+    label_result_text: hsla(0.622, 0.26, 0.15, 1.0),
+    accent: hsla(0.65, 0.66, 0.56, 1.0),
+    app_icon_bg_from: hsla(0.219, 0.11, 0.15, 1.),
+    app_icon_bg_to: hsla(0.22, 0.23, 0.3, 1.),
+};
