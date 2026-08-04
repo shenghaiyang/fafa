@@ -12,7 +12,7 @@ readme = "README.md"
 
 [dependencies]
 anyhow = "1.0.104"
-argon2 = "0.5"
+argon2 = "0.6.0-rc.8"
 base64 = "0.23.1"
 blake3 = "1.8.5"
 dirs = "6.0.0"
@@ -25,7 +25,6 @@ jiff = "0.2.35"
 md-5 = "0.11.0"
 percent-encoding = "2.3.1"
 qrcode = { version = "0.14.1", features = ["svg"] }
-rand_core = { version = "0.10.1", features = ["getrandom"] }
 rust-embed = { version = "8.12.0", features = ["include-exclude"] }
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.151"
@@ -42,6 +41,8 @@ uuid = { version = "1.24.0", features = ["v4", "v7"] }
 name = "FaFa"
 identifier = "com.shenghaiyang.fafa"
 icon = ["resources/app-icon-512.png", "resources/app-icon-512@2x.png"]
+copyright = "Copyright © 2026 shenghaiyang"
+osx_minimum_system_version = "12.0"
 
 [lints.clippy]
 inconsistent_struct_constructor = "warn"

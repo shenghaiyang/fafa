@@ -1,3 +1,5 @@
+use argon2::password_hash::phc::Salt;
+use argon2::{Argon2, PasswordHasher};
 use gpui::{Context, Entity, ReadGlobal, Render, SharedString, Window, div, prelude::*, px};
 
 use crate::locale::L10nState;
@@ -47,10 +49,8 @@ impl PasswordHashPanel {
 
         match self.algorithm {
             HashAlgorithm::Argon2 => {
-                use argon2::password_hash::{SaltString, rand_core::OsRng};
-                use argon2::{Argon2, PasswordHasher};
-                let salt = SaltString::generate(&mut OsRng);
-                match Argon2::default().hash_password(password.as_bytes(), &salt) {
+                let salt = Salt::generate();
+                match Argon2::default().hash_password_with_salt(password.as_bytes(), &salt) {
                     Ok(hash) => {
                         self.pwd_hash_result = Some(hash.to_string());
                         self.pwd_error = None;
