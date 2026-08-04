@@ -41,8 +41,14 @@ jobs:
             --release \
             --target ${{ matrix.target }}
 
+      - name: Rename dmg
+        run: |
+          mv \
+            target/${{ matrix.target }}/release/bundle/dmg/FaFa.dmg \
+            target/${{ matrix.target }}/release/bundle/dmg/FaFa-macos-${{ matrix.arch }}.dmg
+
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v3
         with:
           files: |
-            target/${{ matrix.target }}/release/bundle/dmg/*.dmg
+            target/${{ matrix.target }}/release/bundle/dmg/FaFa-macos-${{ matrix.arch }}.dmg
