@@ -14,6 +14,7 @@ readme = "README.md"
 anyhow = "1.0.104"
 argon2 = "0.6.0-rc.8"
 base64 = "0.23.1"
+bcrypt = "0.19.3"
 blake3 = "1.8.5"
 dirs = "6.0.0"
 gpui = { git = "https://github.com/zed-industries/zed.git" }

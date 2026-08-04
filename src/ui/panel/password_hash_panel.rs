@@ -1,5 +1,6 @@
 use argon2::password_hash::phc::Salt;
 use argon2::{Argon2, PasswordHasher};
+use bcrypt::{hash, DEFAULT_COST};
 use gpui::{Context, Entity, ReadGlobal, Render, SharedString, Window, div, prelude::*, px};
 
 use crate::locale::L10nState;
@@ -14,6 +15,7 @@ use crate::ui::component::text_input::{InputEvent, TextInput};
 #[derive(Clone, Copy, PartialEq, Eq)]
 enum HashAlgorithm {
     Argon2,
+    Bcrypt,
 }
 
 pub struct PasswordHashPanel {
@@ -53,6 +55,19 @@ impl PasswordHashPanel {
                 match Argon2::default().hash_password_with_salt(password.as_bytes(), &salt) {
                     Ok(hash) => {
                         self.pwd_hash_result = Some(hash.to_string());
+                        self.pwd_error = None;
+                    }
+                    Err(e) => {
+                        let l10n = L10nState::global(cx).l10n;
+                        self.pwd_error = Some(format!("{}: {}", l10n.hash_password_error, e));
+                        self.pwd_hash_result = None;
+                    }
+                }
+            }
+            HashAlgorithm::Bcrypt => {
+                match hash(password, DEFAULT_COST) {
+                    Ok(h) => {
+                        self.pwd_hash_result = Some(h);
                         self.pwd_error = None;
                     }
                     Err(e) => {
@@ -102,6 +117,13 @@ impl Render for PasswordHashPanel {
                             .selected(self.algorithm == HashAlgorithm::Argon2)
                             .on_click(cx.listener(move |this, _, _, cx| {
                                 this.select_algorithm(HashAlgorithm::Argon2, cx)
+                            })),
+                    )
+                    .child(
+                        RadioButton::new("pwd-algo-bcrypt", l10n.hash_password_bcrypt)
+                            .selected(self.algorithm == HashAlgorithm::Bcrypt)
+                            .on_click(cx.listener(move |this, _, _, cx| {
+                                this.select_algorithm(HashAlgorithm::Bcrypt, cx)
                             })),
                     ),
             )

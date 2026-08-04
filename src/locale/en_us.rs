@@ -123,4 +123,5 @@ pub const EN_US: L10n = L10n {
     hash_password_error: "Password hash error",
     hash_password_algorithm: "Algorithm:",
     hash_password_argon2: "Argon2",
+    hash_password_bcrypt: "Bcrypt",
 };

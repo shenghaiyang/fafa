@@ -45,6 +45,7 @@ pub struct L10n {
     pub hash_password_error: &'static str,
     pub hash_password_algorithm: &'static str,
     pub hash_password_argon2: &'static str,
+    pub hash_password_bcrypt: &'static str,
 
     // QR Code
     pub qrcode_input_placeholder: &'static str,

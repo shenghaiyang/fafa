@@ -123,4 +123,5 @@ pub const ZH_CN: L10n = L10n {
     hash_password_error: "密码哈希错误",
     hash_password_algorithm: "算法：",
     hash_password_argon2: "Argon2",
+    hash_password_bcrypt: "Bcrypt",
 };
