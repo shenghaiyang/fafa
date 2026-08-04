@@ -13,7 +13,7 @@ readme = "README.md"
 [dependencies]
 anyhow = "1.0.104"
 argon2 = "0.5"
-base64 = "0.23.0"
+base64 = "0.23.1"
 blake3 = "1.8.5"
 dirs = "6.0.0"
 gpui = { git = "https://github.com/zed-industries/zed.git" }
@@ -25,7 +25,7 @@ jiff = "0.2.35"
 md-5 = "0.11.0"
 percent-encoding = "2.3.1"
 qrcode = { version = "0.14.1", features = ["svg"] }
-rand_core = { version = "0.6", features = ["getrandom"] }
+rand_core = { version = "0.10.1", features = ["getrandom"] }
 rust-embed = { version = "8.12.0", features = ["include-exclude"] }
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.151"
