@@ -1,6 +1,6 @@
 use argon2::password_hash::phc::Salt;
 use argon2::{Argon2, PasswordHasher};
-use bcrypt::{hash, DEFAULT_COST};
+use bcrypt::{DEFAULT_COST, hash};
 use gpui::{Context, Entity, ReadGlobal, Render, SharedString, Window, div, prelude::*, px};
 
 use crate::locale::L10nState;
@@ -64,19 +64,17 @@ impl PasswordHashPanel {
                     }
                 }
             }
-            HashAlgorithm::Bcrypt => {
-                match hash(password, DEFAULT_COST) {
-                    Ok(h) => {
-                        self.pwd_hash_result = Some(h);
-                        self.pwd_error = None;
-                    }
-                    Err(e) => {
-                        let l10n = L10nState::global(cx).l10n;
-                        self.pwd_error = Some(format!("{}: {}", l10n.hash_password_error, e));
-                        self.pwd_hash_result = None;
-                    }
+            HashAlgorithm::Bcrypt => match hash(password, DEFAULT_COST) {
+                Ok(h) => {
+                    self.pwd_hash_result = Some(h);
+                    self.pwd_error = None;
                 }
-            }
+                Err(e) => {
+                    let l10n = L10nState::global(cx).l10n;
+                    self.pwd_error = Some(format!("{}: {}", l10n.hash_password_error, e));
+                    self.pwd_hash_result = None;
+                }
+            },
         }
         cx.notify();
     }
