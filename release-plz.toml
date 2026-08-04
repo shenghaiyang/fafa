@@ -13,3 +13,5 @@ git_release_enable = true
 
 # labels for the release PR
 pr_labels = ["release"]
+
+publish = false
