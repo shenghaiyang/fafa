@@ -1,0 +1,34 @@
+[package]
+name = "fafa"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+description = "A developer toolbox command-line tool"
+
+[dependencies]
+anstream.workspace = true
+anyhow.workspace = true
+argon2.workspace = true
+base64.workspace = true
+bcrypt.workspace = true
+blake3.workspace = true
+clap = { workspace = true, features = ["derive"] }
+heck.workspace = true
+hex.workspace = true
+jiff.workspace = true
+md-5.workspace = true
+owo-colors.workspace = true
+percent-encoding.workspace = true
+qrcode = { workspace = true, features = ["svg"] }
+sha1.workspace = true
+sha2.workspace = true
+sha3.workspace = true
+strum = { workspace = true, features = ["derive"] }
+uuid = { workspace = true, features = ["v4", "v7"] }
+
+[lints]
+workspace = true
