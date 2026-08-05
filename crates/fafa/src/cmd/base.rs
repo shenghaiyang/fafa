@@ -49,7 +49,7 @@ fn compute_num(input: &str, from: Radix) -> Result<i64> {
             i64::from_str_radix(input, 2)?
         }
         Radix::Octal => i64::from_str_radix(input, 8)?,
-        Radix::Decimal => i64::from_str_radix(input, 10)?,
+        Radix::Decimal => input.parse::<i64>()?,
         Radix::Hex => {
             let input = input
                 .strip_prefix("0x")
