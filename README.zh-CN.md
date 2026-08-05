@@ -1,18 +1,18 @@
 # FaFa
 
-<img src="assets/images/logo.webp" width="128" alt="FaFa">
+<img src="crates/fafa-desktop/assets/images/logo.webp" width="128" alt="FaFa">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE-MIT)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE-APACHE)
 
-一款轻量的开发者工具箱，基于 Rust 与 GPUI 构建的桌面应用。
+一款轻量的开发者工具箱。
 
 ## 功能特性
 
-内置 10 个常用开发工具：
+内置 10 个常用开发工具（桌面端与命令行均支持）：
 
 - **哈希计算**：MD5 / SHA1 / SHA256 / SHA512 / SHA3-256 / SHA3-512 / BLAKE3
-- **密码哈希**：Argon2 生成
+- **密码哈希**：Argon2 / bcrypt 生成
 - **二维码生成**：可调纠错等级
 - **时间戳转换**：秒 / 毫秒，支持 24+ 时区
 - **URL 编解码**

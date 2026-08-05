@@ -39,7 +39,8 @@ jobs:
         run: |
           cargo bundle \
             --release \
-            --target ${{ matrix.target }}
+            --target ${{ matrix.target }} \
+            -p fafa-desktop
 
       - name: Rename dmg
         run: |
