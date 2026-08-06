@@ -20,7 +20,7 @@ blake3 = "1.8.5"
 clap = "4.5.57"
 dirs = "6.0.0"
 gpui = { git = "https://github.com/zed-industries/zed.git", rev = "82878540b5410b288a2c92cb9ee5675533e4d807" }
-gpui_platform = { git = "https://github.com/zed-industries/zed.git", rev = "82878540b5410b288a2c92cb9ee5675533e4d807" }
+gpui_platform = { git = "https://github.com/zed-industries/zed.git", rev = "d61e80b85debf0c56ecdcadf635ffa2660ddfd37" }
 gpui_util = { git = "https://github.com/zed-industries/zed.git", rev = "82878540b5410b288a2c92cb9ee5675533e4d807" }
 heck = "0.5.0"
 hex = "0.4.3"
