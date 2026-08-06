@@ -3,7 +3,6 @@ members = ["crates/fafa", "crates/fafa-desktop"]
 resolver = "2"
 
 [workspace.package]
-version = "0.1.2"
 edition = "2024"
 rust-version = "1.97.1"
 authors = ["shenghaiyang"]
