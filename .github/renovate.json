@@ -8,6 +8,14 @@
   "semanticCommitScope": "deps",
   "packageRules": [
     {
+      "matchPackageNames": [
+        "gpui",
+        "gpui_platform",
+        "gpui_util"
+      ],
+      "enabled": false
+    },
+    {
       "matchManagers": [
         "cargo"
       ],
